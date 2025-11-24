@@ -36,10 +36,19 @@
             );
           });
       }
+
+      // 👉 Bouton fermer : revenir à la page précédente
+      const closeBtn = document.getElementById("close");
+
+      closeBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.history.back(); // retour à la page précédente
+      });
     </script>
 
     <!-- Formulaire -->
-    <form onsubmit="envoyerMail(event)" class="form-contact">
+    <form onsubmit="envoyerMail(event)" class="form-contact" id="form">
+      <button id="close">x</button>
       <input type="text" name="from_name" placeholder="Votre nom" required />
       <input type="email" name="reply_to" placeholder="Votre e-mail" required />
       <textarea
